@@ -83,7 +83,7 @@ GAScalcul = (((ScoreMatrix(x,1)*10)/78) + ((ScoreMatrix(x,2)*10)/45) + ((ScoreMa
 GAS = [GAScalcul,((ScoreMatrix(x,1)*10)/78), ((ScoreMatrix(x,2)*10)/45), ((ScoreMatrix(x,5)*10)/34), acceleration];
 
 % Scores Histogram
-HistogramGAS = bar(GAS);
+HistogramGAS = bar(GAS(x,:));
 HistogramGAS.FaceColor = 'flat';
 HistogramGAS.CData(1,:)= [0.4660 0.6740 0.1880];
 HistogramGAS.CData(2,:)= [0 0.4470 0.7410];
@@ -91,13 +91,12 @@ HistogramGAS.CData(3,:)= [0.3010 0.7450 0.9330];
 HistogramGAS.CData(4,:)= [0.8500 0.3250 0.0980];
 HistogramGAS.CData(5,:)= [1 1 0];
 
-yline(GAScalcul(1,1),'g--', 'LineWidth', 2);
+yline(GAScalcul(x,1),'g--', 'LineWidth', 2);
 
 title('GAS and others Scores for subject x')
 legend('GAS',' ')
-text(1.7,2,'Baecke','FontWeight','bold');
-text(2.83,2,'R&G','FontWeight','bold');
-text(3.6,2,'MET/week','FontWeight','bold');
-text(4.6,2,'Acceleration','FontWeight','bold');
+text(1.75,2,'Baecke','FontWeight','bold');
+text(2.85,2,'R&G','FontWeight','bold');
+text(3.67,2,'MET/week','FontWeight','bold');
 axis([0 inf  0 10])
 

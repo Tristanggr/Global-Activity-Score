@@ -37,6 +37,7 @@ Since we do not have this accessory, we will limit ourselves to the use of an ac
 - an estimation of MET number for principal activity sessions
 - an estimation of MET number by week
 
+
 ### Collecting actimetry data
 In the entry of the program, we used a .csv file which contains the data of the Activity AX3. The algorith create figure which represent the Activity measurement. Also in the figure, we can observe different treshold to isolate different degrees of activities and the period of high rythm of activities.
 
@@ -65,6 +66,7 @@ We average the two results and display the score directly in the application.
 NOTE : Other variables can be added, just set a score scale from 1 to 10.
 
 ## Exemple
+Run `exemple.m`
 
 ## TODO
 ### Adding GPS
