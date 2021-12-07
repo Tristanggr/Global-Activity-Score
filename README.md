@@ -1,7 +1,7 @@
 
 # Global-Activity-Score
 Projet HAH913E 
-Activité physique & Santé : Partie Mesure
+ActivitÃ© physique & SantÃ© : Partie Mesure
 ----------------------------------------------
 Calculation of an overall activity score to simplify the estimation of daily physical activities.
 
@@ -16,6 +16,7 @@ This program calculates this score from:
 
 - Objective data collected via a connected ring. Ideally we would like to create our own ring available in loan or rental for application users. At the moment, the solution marketed that comes closest to it is the «Oura Ring». It contains two infrared LED sensors (to calculate the heart rate), several temperature sensors, a 3D accelerometer and a gyroscope for a price of $300.
 ![](IMAGES/ring.png)
+
 Since we do not have this accessory, we will limit ourselves to the use of an accelerometer lent by our professor. 
 
 
@@ -45,6 +46,8 @@ In the entry of the program, we used a .csv file which contains the data of the 
 The device is composed by an accelerometer and a flash memory. Thanks a software, we can extract the data in a .cvs file. We can find in this file, the timeline and the accelerometer data in 3 axis (X,Y,Z)
 
 In the program, we calculated the euclidienne norme of X Y Z. After that, we substracted 1 of the norm to remove the gravity. Also, we have made means of data every 10 minutes. Thanks thoses new data, we can have the activity and create tresholds.
+
+We calculated when the user was in an intense, medium or light activity. We have etablished a score which use the type of the person(sportman, professionnal or novice) and the timing of his physical activities. This score is beetween 0 and 10.
 
 ### GAS
 We chose to create the score based on the averages of the questionnaire results. However a different approach by giving more importance to one of the parameters could be considered.
