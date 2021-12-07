@@ -72,7 +72,9 @@ NOTE : Other variables can be added, just set a score scale from 1 to 10.
 ## Exemple
 Run `exemple.m`
 Shows GAS in comparaison of all its variables for one subject.
+
 ![](IMAGES/exempleResults.png)
+
 NOTE: Recording was during school day
 ## TODO
 ### Adding GPS
