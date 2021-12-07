@@ -14,7 +14,7 @@ This program calculates this score from:
   https://forms.gle/7TvAGn3o9GjJeZeP9
   (Questionnaire created from Baecke Questionnaire, Ricci &Gagnon Questionnaire and MET number estimation Questionnaire)
 
-- Objective data collected via a connected ring. Ideally we would like to create our own ring available in loan or rental for application users. At the moment, the solution marketed that comes closest to it is the «Oura Ring». It contains two infrared LED sensors (to calculate the heart rate), several temperature sensors, a 3D accelerometer and a gyroscope for a price of $300.
+- Objective data collected via a connected ring. Ideally we would like to create our own ring available in loan or rental for application users. At the moment, the solution marketed that comes closest to it is the Â«Oura RingÂ». It contains two infrared LED sensors (to calculate the heart rate), several temperature sensors, a 3D accelerometer and a gyroscope for a price of $300.
 ![](IMAGES/ring.png)
 
 Since we do not have this accessory, we will limit ourselves to the use of an accelerometer lent by our professor. 
