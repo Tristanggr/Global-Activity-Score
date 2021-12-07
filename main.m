@@ -1,13 +1,12 @@
 %% Initialisation
 clear
 clc
-clf
 
 %% Import data from text file
 % Script for importing data from the following folder:
 %
-%    filename: C:\Users\trist\OneDrive\Bureau\Santé-Activité
-%    Physique\Programme...
+%    filename:
+%    C:\Users\trist\OneDrive\Documents\GitHub\Global-Activity-Score
 
 %% Setup the Import Options and import the data
 opts = delimitedTextImportOptions("NumVariables", 27);
@@ -34,36 +33,50 @@ opts = setvaropts(opts, ["Quelleestvotreoccupationtravailprincipale", "Autravail
 opts = setvaropts(opts, ["Quelleestvotreoccupationtravailprincipale", "Autravailvousvousasseyezparjour", "Autravailvoustesdebout", "Autravailvousmarchezparjour", "Autravailvoussoulevezdespoidslourds", "Aprsletravailvoustesfatigus", "Autravailvoustranspirez", "Encomparaisonaveclesautrespersonnesdemongevouspensezquevotretra", "Endehorsdevotretravailrguliercombiendheuresconsacrezvousparsema", "Pratiquezvousrgulirementuneactivitsportivedcrirelaprincipale", "Combiendeminutesconsacrezvousenmoyennechaquesancedactivitphysiq", "Aquellefrquencepratiquezvouscetteactivit", "Combiendemoisparanpratiquezvous", "Pendantvotresessionvoustranspirez", "Pendantlasessionlaconversationest", "Pendantlasessionvoustes", "Pratiquezvousrgulirementuneautredesactivitssportives", "Encomparaisonaveclesautrespersonnesdemongevouspensezquevotreact", "Durantvotretempsconsacrauxloisirsvoustranspirez", "Durantvotretempsconsacrauxloisirsvousregardezuncranassisparjour", "Durantvotretempsconsacrauxloisirsvousmarchezparjour", "Durantvotretempsconsacrauxloisirsvousfaitesduvlo", "Pourvosallerretoursdomicilelieudetravailcombiendeminutesmarchez", "Combiendtagesenmoyennemontezvouspiedchaquejour"], "ThousandsSeparator", ",");
 
 % Import the data
-fpath = 'C:\Users\trist\OneDrive\Bureau\Santé-Activité Physique\Programme';
+fpath = 'C:\Users\trist\OneDrive\Documents\GitHub\Global-Activity-Score\DATA';
 fname = uigetfile;
-%fname = 'SGA1.csv';
 full_fname = fullfile(fpath,fname);
 
 SGA = readtable(full_fname, opts);
-SGA = double(table2array(SGA));
-SGAsize = (size(SGA)+1);
-Scores = zeros(SGAsize(1),5);
+
+SGAsize = (size(SGA));
+
+% Initiate matrix for scores results
+ScoresMatrix = zeros(SGAsize(1),5);
 
 %% Clear temporary variables
 clear opts
 
 %% Scores Calculation
+% Maximum values for each score
 Baecke = 78;
 RiccietGagnon = 45;
 METparActivit = [0,19];
 METparSemaine = 34;
 
+% Define Tables for scores results
 ScoresTab = table(Baecke,RiccietGagnon,METparActivit,METparSemaine);
-ScoresSubject = ScoresTab;
+ScoresSubject = ScoresTab; %scores for each iteration of For Loop
 
-for i = 1 : (SGAsize(1)-1)
+SGA = double(table2array(SGA));
+for i = 1 : (SGAsize(1))
     SGAi = SGA(i,:);
     [Baecke,RiccietGagnon,METparActivit,METparSemaine] = ScoresCalculation(SGAi);
+    % add values in matrix
     ScoreMatrix(i,:)= [Baecke,RiccietGagnon,METparActivit,METparSemaine];
+    % add values in table
     ScoresSubject = table(Baecke,RiccietGagnon,METparActivit,METparSemaine);
     ScoresTab = [ScoresTab;ScoresSubject];
 end
 ScoresTab = sortrows(ScoresTab,'Baecke','descend');
 
 %% GAS Calculation
-GASqcm = (((ScoreMatrix(:,1)*10)/78) + ((ScoreMatrix(:,2)*10)/45) + ((ScoreMatrix(:,5)*10)/34))/3;
+GAScalcul = (((ScoreMatrix(:,1)*10)/78) + ((ScoreMatrix(:,2)*10)/45) + ((ScoreMatrix(:,5)*10)/34))/3;
+GAS = [GAScalcul,((ScoreMatrix(:,1)*10)/78), ((ScoreMatrix(:,2)*10)/45), ((ScoreMatrix(:,5)*10)/34)];
+%% Exemple
+% Subject choice
+x = 10
+bar(GAS(x,:))
+plot([0 inf],[GAScalcul(x)])
+axis([0 inf  0 10])
+
