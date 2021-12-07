@@ -15,6 +15,7 @@ This program calculates this score from:
   (Questionnaire created from Baecke Questionnaire, Ricci &Gagnon Questionnaire and MET number estimation Questionnaire)
 
 - Objective data collected via a connected ring. Ideally we would like to create our own ring available in loan or rental for application users. At the moment, the solution marketed that comes closest to it is the «Oura Ring». It contains two infrared LED sensors (to calculate the heart rate), several temperature sensors, a 3D accelerometer and a gyroscope for a price of $300.
+![](IMAGES/ring.png)
 Since we do not have this accessory, we will limit ourselves to the use of an accelerometer lent by our professor. 
 
 
@@ -67,7 +68,9 @@ NOTE : Other variables can be added, just set a score scale from 1 to 10.
 
 ## Exemple
 Run `exemple.m`
-
+Shows GAS in comparaison of all its variables for one subject.
+![](IMAGES/exempleResults.png)
+NOTE: Recording was during school day
 ## TODO
 ### Adding GPS
 With GPS information from the phone, we could estimate the number of kilometres travelled and thus add this parameter.
