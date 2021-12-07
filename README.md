@@ -1,8 +1,4 @@
----
-output:
-  pdf_document: default
-  html_document: default
----
+
 # Global-Activity-Score
 Projet HAH913E 
 Activité physique & Santé : Partie Mesure
@@ -11,9 +7,10 @@ Calculation of an overall activity score to simplify the estimation of daily phy
 
 ## Context
 Ten years ago, only a few specialized brands offered athletes sensors to better analyze health data during training.Connected wristbands are now common for accurate sleep and activity information. But even without dedicated equipment, it is possible to use the sensors built into smartphones to provide essential information.
+
 As part of a school project, we develop a concept application that estimates daily physical activity based on subjective and objective variables and informs the user about it with a single score out of 10, the Global Activity Score (GAS). 
 This program calculates this score from:
-- Subjective data collected via this questionnaire :
+- Subjective data collected via this form :
   https://forms.gle/7TvAGn3o9GjJeZeP9
   (Questionnaire created from Baecke Questionnaire, Ricci &Gagnon Questionnaire and MET number estimation Questionnaire)
 
@@ -27,11 +24,11 @@ This program calculates this score from:
   - clone the form doc
   
 ## Code description
-'main' is the entry point
-'ScoresCalculation' takes care of calculating score from GoogleForm questions.
+- `main` is the entry point
+- `ScoresCalculation` takes care of calculating score from GoogleForm questions.
 
 ### ScoreCalculation
-'ScoresCalculation' use the excel document that you can export with GoogleForm to extract :
+`ScoresCalculation` use the excel document that you can export with GoogleForm to extract :
 - Baecke score from 17 to 78
 - Ricci&Gagnon score from 6 to 45
 - an estimation of MET number for principal activity sessions
@@ -59,7 +56,7 @@ NOTE : Other variables can be added, just set a score scale from 1 to 10.
 
 ## TODO
 ### Adding GPS
-With GPS informations from the phone, we could estimate the number of kilometres travelled and thus add this parameter.
+With GPS information from the phone, we could estimate the number of kilometres travelled and thus add this parameter.
 
 ### Create a score based on the variability of the heart rate during the day
 The heart rate is a good estimator of the intensity of a physical effort.
