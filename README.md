@@ -37,8 +37,12 @@ Since we do not have this accessory, we will limit ourselves to the use of an ac
 - an estimation of MET number for principal activity sessions
 - an estimation of MET number by week
 
-### Actimetry use
-Using a connected ring
+### Collecting actimetry data
+In the entry of the program, we used a .csv file which contains the data of the Activity AX3. The algorith create figure which represent the Activity measurement. Also in the figure, we can observe different treshold to isolate different degrees of activities and the period of high rythm of activities.
+
+The device is composed by an accelerometer and a flash memory. Thanks a software, we can extract the data in a .cvs file. We can find in this file, the timeline and the accelerometer data in 3 axis (X,Y,Z)
+
+In the program, we calculated the euclidienne norme of X Y Z. After that, we substracted 1 of the norm to remove the gravity. Also, we have made means of data every 10 minutes. Thanks thoses new data, we can have the activity and create tresholds.
 
 ### GAS
 We chose to create the score based on the averages of the questionnaire results. However a different approach by giving more importance to one of the parameters could be considered.
@@ -51,11 +55,6 @@ GASqcm =    (((ScoreMatrix(:,1)*10)/78)
 
 Added to this, we note on 10 the ring activity measure according to the selected threshold. Thank a study with a Axivity AX3, we made some mesurement to develop our data in activities measurment. We create our own treshold beetween 0 and 10 for an entire day.
 
-In the entry of the program, we used a .csv file which contains the data of the Activity AX3. The algorith create figure which represent the Activity measurement. Also in the figure, we can observe different treshold to isolate different degrees of activities and the period of high rythm of activities.
-
-The device is composed by an accelerometer and a flash memory. Thanks a software, we can extract the data in a .cvs file. We can find in this file, the timeline and the accelerometer data in 3 axis (X,Y,Z)
-
-In the program, we calculated the euclidienne norme of X Y Z. After that, we substracted 1 of the norm to remove the gravity. Also, we have made means of data every 10 minutes. Thanks thoses new data, we can have the activity and create tresholds.
 
 ```{scilab}
 
