@@ -1,7 +1,7 @@
 
 # Global-Activity-Score
 Projet HAH913E 
-ActivitÃ© physique & SantÃ© : Partie Mesure
+Activité physique & Santé : Partie Mesure
 ----------------------------------------------
 Calculation of an overall activity score to simplify the estimation of daily physical activities.
 
@@ -14,7 +14,10 @@ This program calculates this score from:
   https://forms.gle/7TvAGn3o9GjJeZeP9
   (Questionnaire created from Baecke Questionnaire, Ricci &Gagnon Questionnaire and MET number estimation Questionnaire)
 
-- Objective data collected via an accelerometer (and other devices if possible).
+- Objective data collected via a connected ring. Ideally we would like to create our own ring available in loan or rental for application users. At the moment, the solution marketed that comes closest to it is the «Oura Ring». It contains two infrared LED sensors (to calculate the heart rate), several temperature sensors, a 3D accelerometer and a gyroscope for a price of $300.
+Since we do not have this accessory, we will limit ourselves to the use of an accelerometer lent by our professor. 
+
+
 
 ## Usage
 - (Clone or) download the repository
@@ -46,16 +49,15 @@ GASqcm =    (((ScoreMatrix(:,1)*10)/78)
                                     /3;
 ```
 
-Added to this, we note on 10 the ring activity measure according to the selected threshold. Thank a study with a Axivity AX3, we made some mesurement to develop our data in activities measurment. We create our own treshold beetween 0 and 10 for an entire day.
-In the entry of the program, we used a .csv file which contains the data of the Activity AX3. The algorithm create figure which represent the Activity measurement. Also in the figure, we can observe different treshold to isolate different degrees of activities and the period of high rythm of activities.
-The device is composed by an accelerometer and a flash memory. Thanks a software, we can extract the data in a .cvs file. We can find in this file, the timeline and the accelerometer data in 3 axis (X,Y,Z)
-In the program, we calculated the euclidienne norme of X Y Z. After that, we substracted 1 of the norm to remove the gravity. Also, we have made means of data every 10 minutes. Thanks thoses new data, we can have the activity and create tresholds.
-```{scilab}
+Added to this, we note on 10 the ring activity measure according to the selected threshold.
+```{matlab}
 
 ```
 We average the two results and display the score directly in the application.
 
 NOTE : Other variables can be added, just set a score scale from 1 to 10.
+
+## Exemple
 
 ## TODO
 ### Adding GPS
