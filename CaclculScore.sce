@@ -103,9 +103,11 @@ function Score=Analyse_Donnes(Type)
         j=j+1
     end
   
-     [S,Score]=Calcul_Score(n_Vigorous,n_Vigorous,n_Vigorous,Type)
+     [S,Score]=Calcul_Score(n_Vigorous,n_Vigorous,n_Vigorous,Type)//Calcul du score
 
 endfunction
+
+//Calcul du score en fonction des temps passés à différentes intensités et selon le type d'utilisateur
 function [S,Score]=Calcul_Score(Nb_Temps1,Nb_Temps2,Nb_Temps3,Type)
     if(Type==1)
         S=Nb_Temps1*3+Nb_Temps2*2+Nb_Temps3;
