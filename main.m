@@ -34,7 +34,7 @@ opts = setvaropts(opts, ["Quelleestvotreoccupationtravailprincipale", "Autravail
 
 % Import the data
 fpath = 'C:\Users\trist\OneDrive\Documents\GitHub\Global-Activity-Score\DATA';
-fname = uigetfile;
+fname = 'DATAquestionnaires.csv';
 full_fname = fullfile(fpath,fname);
 
 SGA = readtable(full_fname, opts);
