@@ -60,15 +60,24 @@ GASqcm =    (((ScoreMatrix(:,1)*10)/78)
 
 Added to this, we note on 10 the ring activity measure according to the selected threshold. Thank a study with a Axivity AX3, we made some mesurement to develop our data in activities measurment. We create our own treshold beetween 0 and 10 for an entire day.
 
+We can see how the program used diffrent treshold to seperate datas on different activity levels
 ```{scilab}
-  if(Type==1)
-          S=Nb_Temps1*3+Nb_Temps2*2+Nb_Temps3;
-       elseif(Type==2)
-          S=Nb_Temps1*3+Nb_Temps2*2;
-      else
-          S=Nb_Temps1;
-      end
-
+    while(j<=n_epoch)
+        Current=Epoch(j)
+        val=Current.val
+        if(val<0,4)
+        elseif(val<0.7) 
+            Light(n_Light)=Current
+            n_Light=n_Light+1
+        elseif (val<0.9) 
+            Moderate(n_Moderate)=Current
+            n_Moderate=n_Moderate+1
+        else 
+            Vigorous(n_Vigorous)=Current
+            n_Vigorous=n_Vigorous+1
+        end
+        j=j+1
+    end
 ```
 We can see below how we used the different intensity levels to create a number. Dependant of this number, we return a score which represent an equivalent of a duration of physical activity
 ```{scilab}
