@@ -31,7 +31,7 @@ Since we do not have this accessory, we will limit ourselves to the use of an ac
 ## Code description
 - `main` is the entry point
 - `ScoresCalculation` takes care of calculating score from GoogleForm questions.
-- `CaclculScoreAccelerometrie.sce' take care of calculating accelerometrie score.
+- `CaclculScoreAccelerometrie.sce` take care of calculating accelerometrie score.
 
 ### ScoreCalculation
 `ScoresCalculation` use the excel document that you can export with GoogleForm to extract :
